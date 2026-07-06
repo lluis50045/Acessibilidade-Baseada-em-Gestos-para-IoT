@@ -1,0 +1,53 @@
+body {
+  background-color: #4facfe; 
+  background-image: linear-gradient(to bottom, #4facfe, #00f2fe);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif; 
+}
+
+.container {
+  background-color: #A090D0; 
+  padding: 40px 30px; 
+  border-radius: 15px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+  width: 90%; 
+  max-width: 450px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.container img[src*="logo.png"] {
+  width: 130px; 
+  height: 130px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-bottom: 20px; 
+  background-color: white; 
+}
+
+.container h1 {
+  color: white;
+  font-size: 32px; 
+  margin-top: 0; 
+  margin-bottom: 30px; 
+  text-align: center; 
+}
+
+.container a {
+  display: block; 
+  width: 100%; 
+  max-width: 300px; 
+  margin-top: 10px; 
+}
+
+#LoginWithAmazon{
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+  display: block; 
+}

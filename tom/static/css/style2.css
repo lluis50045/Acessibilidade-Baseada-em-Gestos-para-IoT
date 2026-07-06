@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    color: black;
+}
+/* */
+
+.container-cima {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-cima svg {
+    margin-right: 10px; 
+}
+
+.container-cima nav a {
+    margin-left: 15px; 
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.container-cima nav a:hover {
+    color: #6574B4; 
+    transform: translateY(-2px); 
+}
+
+
+.container-cima > svg,
+.container-cima > span {
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+.container-cima > br {
+    display: none; 
+}
+
+
+.welcome-user {
+    display: flex;
+    align-items: center;
+}
+
+.welcome-user svg {
+    border: 2px solid #6574B4; 
+    border-radius: 50%;     
+    padding: 6px;             
+                               
+                              
+    margin-right: 10px;      
+    fill: #6574B4;            
+    box-sizing: content-box;  
+}
+
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px; 
+}
+
+
+.intro {
+    background-color: #6574B4;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 50px 20px; 
+    gap: 30px; 
+}
+
+.intro-logo-container img {
+    width: 400; 
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; 
+}
+
+.intro-logo-container img:hover {
+    transform: scale(1.05); 
+}
+
+.intro-text-container h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #F0B90B; 
+    font-size: 5.2em; 
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase;
+    margin: 0; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
+}
+
+
+.intro h2 {
+    display: none;
+}
+
+
+.routines-grid {
+    background-color:  linear-gradient(to bottom, #4facfe, #00f2fe);
+    padding-top: 20px;    
+    padding-bottom: 20px; 
+    text-align: center; 
+}
+
+.routines-grid h1 {
+    color: white;
+    font-size: 2.5em; 
+    margin-bottom: 20px; 
+}
+
+
+.card-grid-inner-container {
+    display: grid;
+    gap: 24px; 
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    max-width: 1192px; 
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 20px; 
+    padding-right: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 330px; 
+}
+
+.card img {
+    width: 200px; 
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    flex-grow: 1;
+}
+
+.btn-register {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.btn-register:hover {
+    background-color: #218838; 
+}
+
+.card.configured .routine-name {
+    font-weight: bold;
+    margin-bottom: 10px; 
+    color: #333;
+}
+
+.actions {
+    margin-top: auto; 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+.btn-action.btn-delete {
+    background-color: #FF4136; 
+    border: none;
+    border-radius: 5px;
+    padding: 8px; 
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-action.btn-delete:hover {
+    background-color: #E00000; 
+}
+
+.btn-action.btn-delete svg {
+    fill: white; 
+    width: 16px;
+    height: 16px;
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none; 
+}
+
+#modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+}
+
+#modal h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+#modal #modal-gesture-img {
+    width: 120px;
+    height: 120px;
+    margin: 1rem 0;
+    object-fit: contain; 
+}
+
+#modal input[type="text"] {
+    width: calc(100% - 2rem); 
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+}
+
+#modal #btn-create-routine {
+    background-color: #28a745; 
+    color: white; 
+    border: none;
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+#modal #btn-create-routine:hover {
+    background-color: #218838; 
+}
+
+#modal #btn-cancel-modal {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    width: 100%;
+    padding: 0.5rem;
+    text-decoration: underline; 
+}
+
+#modal #btn-cancel-modal:hover {
+    color: #555;
+}
+
+#modal .info-text {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;    
+    padding-top: 10px;
+
+    background: #f0f0f0;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.rotinas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  min-height: 80vh; 
+  text-align: center;
+  padding: 20px;
+}
+
+.rotinas h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px; 
+  color: white;
+}
+
+.naoAtivada {
+  width: 280px;
+  max-width: 90%;
+  height: auto;
+}

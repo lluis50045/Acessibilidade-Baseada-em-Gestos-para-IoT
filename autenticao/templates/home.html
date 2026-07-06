@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="{% static 'images/logo.png' %}">
+        <h1>Sua Voz em Gesto</h1>
+        <a
+             href="{{ auth_url }}">
+            <img src="https://m.media-amazon.com/images/G/01/lwa/btnLWA_gold_312x64.png" width="312" height="64"
+                alt="Login com Amazon">
+        </a>
+
+    </div>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script type="text/javascript">
+
+        document.getElementById('LoginWithAmazon').onclick = function () {
+            var options = {
+                scope: 'profile',
+                response_type: 'code'
+            };
+
+            // Passe a URL de redirecionamento como o segundo argumento.
+            amazon.Login.authorize(options, 'http://127.0.0.1:8000/login/');
+
+            return false;
+        };
+    </script>
+</body>
+
+</html>
